@@ -1,0 +1,21 @@
+<div *ngIf="widgetData | async as places;" class="element-left">
+  <div class="element-bg-img"><img src="assets/images/1.jpg" alt="" class="img-responsive"> </div>
+  <div class="element-left-bottom">
+    <div class="ele-strip">
+      <ul *ngIf="widgetNav | async as widgetNav">
+        <li *ngFor="let item of widgetNav; last as isLast" [ngClass]="{'anc-bor': isLast}">
+          <a href="">{{item}}</a>
+        </li>
+      </ul>
+    </div>
+    <div class="village">
+      <h3>Righteous indignation & like</h3>
+      <span class="line"></span>
+      <div class="activity_box">
+        <div class="scrollbar" id="style-2">
+          <app-main-card  *ngFor="let item of places | dataFilter: selectType;" [item]="item" select=".activity-row"></app-main-card>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
